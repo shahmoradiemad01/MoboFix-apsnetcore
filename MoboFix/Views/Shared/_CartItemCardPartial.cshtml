@@ -1,0 +1,26 @@
+﻿@model CartItem
+
+
+<tr dir="rtl">
+    <td class="cr-cart-name">
+        <a href="javascript:void(0)">
+            @Model.Product.Name
+        </a>
+    </td>
+    <td class="cr-cart-price">
+        <span class="amount">@Model.Product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("fa-IR"))</span>
+    </td>
+    <td class="cr-cart-qty">
+        <div class="cart-qty-plus-minus">
+            <i>@Model.Quantity</i>
+        </div>
+    </td>
+    <td class="cr-cart-subtotal">
+        @{int total = Model.Product.Price * Model.Quantity;}
+        @total.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("fa-IR"))</td>
+    <td class="cr-cart-remove">
+        <a href="javascript:void(0)">
+            <i>@Model.StatusMessage</i>
+        </a>
+    </td>
+</tr>

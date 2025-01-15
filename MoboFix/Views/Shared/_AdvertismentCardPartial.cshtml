@@ -1,0 +1,29 @@
+﻿@model Advertisment
+
+@{
+    var ImageSrc = "~/" + Model.Product.ImagePath;
+    ImageSrc = "~/Content/Product/1.jpg";
+}
+
+<div class="col-lg-3 col-6 cr-product-box mb-24">
+    <div class="cr-product-card">
+        <div class="cr-product-image">
+            <div class="cr-image-inner zoom-image-hover" style="position: relative; overflow: hidden;">
+                <img src="~/Content/Product/1.jpg" alt=@Model.Product.Name>
+            </div>
+            <button class="addToCartButton cr-shopping-bag" data-product-id="@Model.Product.Id">
+                <i class="ri-shopping-bag-line"></i>
+            </button>
+        </div>
+        <div class="cr-product-details">
+            <div class="cr-brand">
+                <p><strong>برند : </strong> @Model.Product.Brand</p>
+            </div>
+            <a href="" class="title">@Model.Product.Name</a>
+            <a class="text">فروشنده : <b>@Model.Seller.UserName</b></a>
+            <p class="cr-price">
+                <span class="new-price">@Model.Product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("fa-IR"))</span>
+            </p>
+        </div>
+    </div>
+</div>

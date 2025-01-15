@@ -1,0 +1,34 @@
+﻿@using MoboFix.Areas.Seller.ViewModels
+@using MoboFix.Utilities.Program.Status
+
+@model List<OrderItemViewModel>
+
+<div class="container mt-5">
+        <h2 class="mb-4">سفارشات</h2>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">عنوان کالا</th>
+                    <th scope="col">سفارش دهنده</th>
+                    <th scope="col">تعداد</th>
+                    <th scope="col">action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Customer</td>
+                        <td>@item.Quantity</td>
+                        <td style="flex-grow">
+                            <a class="OrderControl btn btn-primary btn-sm" data-order-id=@item.Id data-order-status = @ProgramStatusCodes.Accepted>تایید</a>
+                            <a class="OrderControl btn btn-danger btn-sm" data-order-id=@item.Id data-order-status = @ProgramStatusCodes.Rejected>رد</a>
+                        </td>
+                        </tr>
+                }
+            }
+            </tbody>
+        </table>
+</div>

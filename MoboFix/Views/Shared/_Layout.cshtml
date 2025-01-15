@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - MoboFix</title>
+
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="/css/vendor/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/css/vendor/remixicon.css">
+    <link rel="stylesheet" href="/css/vendor/flaticons.css">
+
+    <!-- Vendor -->
+    <link rel="stylesheet" href="/css/vendor/animate.css">
+    <link rel="stylesheet" href="/css/vendor/aos.min.css">
+    <link rel="stylesheet" href="/css/vendor/range-slider.css">
+    <link rel="stylesheet" href="/css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/vendor/jquery.slick.css">
+    <link rel="stylesheet" href="/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/fontiran.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+
+    <!-- Main -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MoboFix.styles.css" asp-append-version="true" />
+</head>
+<body class="bg-6">
+    <partial name="_Header" />
+
+    <div class="container">
+        <main role="main">
+        @RenderBody()
+        </main>
+    </div>
+
+@*    <footer class="padding-t-50 bg-off-white" style="position:page">
+        <div class="container">
+            <p  dir="ltr" class="text text-black">Made with Passion and Dedication in Shahreza University <i class="ri ri-aliens-fill"></i> </p>
+        </div>
+    </footer>*@
+
+    <!-- Tab to top -->
+    <a href="#Top" class="back-to-top result-placeholder">
+        <i class="ri-arrow-up-line"></i>
+        <div class="back-to-top-wrap">
+            <svg viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+    </a>
+
+    <!-- Vendor Custom -->
+    <script src="/js/vendor/mixitup.min.js"></script>
+    <script src="/js/vendor/range-slider.js"></script>
+    <script src="/js/vendor/aos.min.js"></script>
+    <script src="/js/vendor/swiper-bundle.min.js"></script>
+@*    <script src="/js/vendor/slick.min.js"></script>*@
+@*    <script src="/js/vendor/owl.carousel.min.js"></script>*@
+    @*<script src="/js/vendor/countdownTimer.js"></script>*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/order.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>به MoboFix خوش آمدید</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+حساب کاربری شما باید توسط آدمین تایید شود. لطفا صبور باشید.
+</p>
+    }
+    else
+    {
+<p>
+        Please check your email to confirm your account.
+</p>
+    }
+}
+

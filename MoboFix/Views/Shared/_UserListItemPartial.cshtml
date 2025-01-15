@@ -1,0 +1,15 @@
+﻿@model ApplicationUser
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Identity
+@{
+    var role = await UserManager.GetRolesAsync(Model);
+}
+
+
+<tr>
+    <td>@Model.UserName</td>
+    <td>@role.Single()</td>
+    <td>
+        <a asp-action="Details" asp-route-id=@Model.Id class="btn btn-outline-secondary">مشاهده</a>
+    </td>
+</tr>

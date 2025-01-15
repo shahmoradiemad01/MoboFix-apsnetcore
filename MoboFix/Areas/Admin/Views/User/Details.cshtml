@@ -1,0 +1,45 @@
+﻿@using MoboFix.Areas.Admin.ViewModels
+@model UserViewModel
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header text-black cr-color">
+            <h4 class="mb-0">اطلاعات کاربر</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>نام‌کاربری : </strong> <span id="userName">@Model.UserName</span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>ایمیل : </strong> <span id="userEmail">@Model.UserEmail</span>
+                </div>
+                <div class="col-md-6">
+                    <strong>فروشگاه : </strong> <span id="shopName">@Model.ShopName</span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>شماره تماس : </strong> <span id="phoneNumber">@Model.PhoneNumber</span>
+                </div>
+                <div class="col-md-6">
+                    <strong>کد پروانه : </strong> <span id="certificationCode">@Model.CertificationCode</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button id="ConfirmUser" data-user-id = @Model.UserId class="btn btn-success">تایید</button>
+            <button id="DeleteUser"  data-user-id = @Model.UserId class="btn btn-danger">حذف</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

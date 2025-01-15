@@ -1,0 +1,68 @@
+﻿@model MoboFix.Areas.Seller.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Seller Add Product";
+}
+<section class="section-login padding-tb-100" dir="rtl">
+    <div class="container">
+        <div class="row">
+            <section class="col-12">
+                <div class="cr-login" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                    <div class="form-logo">
+                        <h2>افزودن</h2>
+                    </div>
+                    <form asp-action="AddProduct" method="post" enctype="multipart/form-data" class="cr-content-form">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <h3>@ViewBag.message</h3>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="cr-form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for="Price" class="cr-form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="CodeNumber" class="control-label"></label>
+                                <input asp-for="CodeNumber" class="cr-form-control" />
+                                <span asp-validation-for="CodeNumber" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Country" class="control-label"></label>
+                                <input asp-for="Country" class="cr-form-control" />
+                                <span asp-validation-for="Country" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Brand" class="control-label"></label>
+                                <input asp-for="Brand" class="cr-form-control" />
+                                <span asp-validation-for="Brand" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Image" class="control-label"></label>
+                                <input asp-for="Image"  type="file" class="cr-form-control" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div></div>
+                            <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <input type="submit" value="ثبت" class="btn btn-primary" />
+                            </div></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

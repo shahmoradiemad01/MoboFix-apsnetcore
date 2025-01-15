@@ -1,0 +1,33 @@
+﻿@using MoboFix.Models;
+@using MoboFix.Utilities.Program.Status
+@model List<Advertisment>
+<h1>آگهی‌ها</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>شناسه آگهی</th>
+            <th>شناسه محصول</th>
+            <th>قیمت</th>
+            <th>بارکد</th>
+            <th>وضعیت</th>
+        </tr>
+    </thead>
+    @{
+        if (Model != null)
+        {
+            foreach (var a in Model){
+
+                    <tr>
+                        <td>@a.Id</td>
+                        <td>@a.Product.Id</td>
+                        <td>@a.Product.Name</td>
+                        <td>@a.Product.Price</td>
+                        <td>@a.Product.CodeNumber</td>
+                        <td>@a.Status</td>
+                    </tr>
+            }   
+
+        }
+    }
+</table>
