@@ -1,0 +1,8 @@
+﻿@model Cart
+@{
+    var list = Model.CartItems;
+}
+
+@foreach(var item in list){
+    <partial name="_CartItemCardPartial" model=@item />
+}

@@ -1,0 +1,61 @@
+﻿@model MoboFix.Models.Product
+
+@{
+    ViewData["Title"] = "Seller Edit Product";
+    var ImageSrc = "~/" + Model.ImagePath;
+}
+
+<h1>Delete</h1>
+
+<h4>Product</h4>
+<h5>@Model.Id</h5>
+<hr ></p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteProduct" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h3>@ViewBag.message</h3>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <p asp-for="Name" class="form-control" >@Model.Name</p>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <p asp-for="Price" class="form-control" >@Model.Price</p>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="CodeNumber" class="control-label"></label>
+                <p asp-for="CodeNumber" class="form-control" >@Model.CodeNumber</p>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <p asp-for="Country" class="form-control" >@Model.Country</p>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <p asp-for="Brand" class="form-control" >@Model.Brand</p>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label"></label>
+                <img src=@ImageSrc/>
+                <p>@ImageSrc</p>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dlete" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

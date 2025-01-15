@@ -1,0 +1,14 @@
+﻿@model List<ApplicationUser>
+
+<table>
+    <thead>
+        <tr>
+            <th>نام کاربری</th>
+            <th>نقش</th>
+        </tr>
+    </thead>
+    @foreach(var user in Model)
+    {
+        <partial name="_UserListItemPartial" model=user/>
+    }
+</table>

@@ -1,0 +1,10 @@
+﻿@model ApplicationUser
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Identity
+@{
+    var role = await UserManager.GetRolesAsync(Model);
+}
+<tr>
+    <td>@Model.UserName</td>
+    <td>@role.Single()</td>
+</tr>

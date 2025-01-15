@@ -1,0 +1,47 @@
+﻿@using MoboFix.Models;
+@using MoboFix.Utilities.Program.Status
+@model List<Tuple<Product,int>>
+<h1>محصولات</h1>
+<a asp-area="Seller" asp-controller="Product" asp-action="AddProduct"><strong>افزودن</strong></a>
+<table>
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>قیمت</th>
+            <th>کد</th>
+        </tr>
+    </thead>
+    @{
+        if (Model != null)
+        {
+            foreach (var p in Model){
+
+                    <tr>
+                        <td>@p.Item1.Name</td>
+                        <td>@p.Item1.Price</td>
+                        <td>@p.Item1.CodeNumber</td>
+                        <td>
+                            <a class="btn" asp-area="Seller" asp-controller="Product" asp-action="EditProduct" asp-route-id=@p.Item1.Id>ویرایش</a>
+                        </td>
+                        <td>
+                        <td>
+                            <a class="btn" asp-area="Seller" asp-controller="Product" asp-action="DeleteProduct" asp-route-id=@p.Item1.Id>حذف</a>
+                        </td>
+                            <a class="btn" asp-area="Seller" asp-controller="Product" asp-action="CreateAdvertisement" asp-route-id=@p.Item1.Id>آگهی</a>
+                            <span>@ProgramStatusCodes.StatusCodeDesc(p.Item2)</span>
+                        </td>
+
+                    </tr>
+            }   
+
+        }
+    }
+</table>
+
+
+<script>
+    var res = @ViewBag.StatusCode
+    const e = document.getElementsByClassName("Add")
+    e.addEventListener("click", () => {
+    alert(res);
+</script>
